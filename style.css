@@ -1,65 +1,109 @@
-@import url('https://fonts.googleapis.com/css2? family= Righteous & family= Roboto:wght@500 & family= Work+Sans:wght@200;400;600;800 & display= intercambio');
-*
-{
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500&family=Work+Sans:wght@200;400;600;800&display=swap');
+
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-body{
-font-family: 'Poppins', sans-serif;
-line-height: 1.6;
-}
 
-main-container{
-    margin: 0px auto;
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+.main-container {
+    margin: 0 auto;
     padding: 25px;
     border-radius: 5px;
 }
-.record-input, .record-display{
+
+.record-input,
+.record-display {
     border-radius: 10px;
-    padding: 20px o;
+    padding: 20px 0;
     margin: 30px 0;
-    box-shadow: 0px 0px 6px 0x rgba(8, 0, 8, 1);
+    box-shadow: 0px 0px 6px 0px rgba(8, 0, 8, 1);
     -webkit-box-shadow: 0px 0px 6px 0px rgba(8, 0, 8, 1);
     -moz-box-shadow: 0px 0px 6px 0px rgba(8, 0, 8, 1);
 }
-.record-input >h2,  .record-display >h2{
+
+.record-input > h2,
+.record-display > h2 {
     padding: 10px 0;
     text-align: center;
     font-size: 22px;
 }
-.record-input{
+
+.record-input {
     color: #000;
-    background: #fff;
+    background: #f0f0f0;
 }
 
-.record-display{
-    background: #e20a59;
+/* .record-display {
+    background: #ee4f9e;
     color: #fff;
     position: relative;
-}
+} */
+
+.record-display {
+    background-image: url("https://img.freepik.com/vector-gratis/fondo-ondulado-morado_1035-8665.jpg?w=2000");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .record-display:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .record-container {
+    position: relative;
+    z-index: 2;
+  }
+  
 
 /* Registro de entrada */
-.entry-form{
+.entry-form {
     padding: 10px 0;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     width: 75%;
-    margin: o auto;
+    margin: 0 auto;
 }
-form label{
+
+form label {
     font-weight: 500;
     opacity: 0.7;
 }
-form label, form input{
+
+form label,
+form input {
     display: block;
     outline: none;
     border-radius: 25px;
     border: none;
 }
-form input[type= "text"], form input[type= "number"]{
+
+form input[type="text"],
+form input[type="number"] {
     color: #000;
     font-family: inherit;
     font-size: 16px;
@@ -67,61 +111,72 @@ form input[type= "text"], form input[type= "number"]{
     margin: 12px 0;
     transition: all 0.5s ease;
 }
-form input:focus{
-    background:#252525;
+
+form input:focus {
+    background: #252525;
     color: #fff;
 }
-.message{
-text-align: center;
-display: block;
-width: 50%;
-margin: 10px auto;
-font-size: 14px;
-color: #fff;
-border-radius: 5px;
-padding: 10px 0;
-visibility: hidden;
+
+.message {
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 0;
+    visibility: hidden;
 }
 
 /* Tipo de alerta */
-.error{
+.error {
     background: #ff4b42f1;
     visibility: visible;
 }
-.success{
-    background: #13f3a1;
-    visibility: visible!important;
+
+.success {
+    background: #9415bbf6;
+    visibility: visible !important;
 }
+
 /*------------------------------------*/
-.input-btns{
+.input-btns {
     text-align: center;
 }
-/* Funcionalidad  BOTON STYLE */
-button{
+
+/* Funcionalidad BOTON STYLE */
+button {
     display: block;
     width: 160px;
     margin: 20px auto;
     font-size: 15px;
     font-weight: 500;
     font-family: inherit;
-    padding: 10px;
+    padding: 10px 22px;
     border: 3px solid #fff;
     border-radius: 25px;
     color: #fff;
     background: #000;
+    opacity: 1; 
     cursor: pointer;
-    opacity: 0.9;
+    background-color:#252525;
     transition: all 0.5s ease;
     outline: none;
+
+
 }
 
-button:hover{
-    opacity: 1;
+button:active {
+    transition: all 0.5s ease;
 }
-#submit-btn span, #cancel-btn span{
+
+#submit-btn span,
+#cancel-btn span {
     padding-right: 5px;
 }
-#reset-btn{
+
+#reset-btn {
     position: absolute;
     right: 25px;
     top: 10px;
@@ -129,20 +184,22 @@ button:hover{
 }
 
 /* ------------------------------------- */
-.record-display{
+.record-display {
     padding: 30px 40px;
 }
-.record-el{
-    display: block
+
+.record-el {
+    display: block;
     padding: 4px 0;
     text-align: center;
     opacity: 0.9;
 }
 
-#labelling{
+#labelling {
     font-weight: 700;
 }
-.record-item{
+
+.record-item {
     color: #000;
     border-radius: 10px;
     padding: 10px 25px;
@@ -150,25 +207,27 @@ button:hover{
     background: #fff;
     box-shadow: 0 0 6px #777;
 }
-#delete-btn span{
+
+#delete-btn span {
     padding-right: 5px;
 }
 
 /* -----------Medios de consulta-------------- */
-@media screen and (min-width: 992px){
-    .main-container{
-        display:grid
-        grid-template-columns: 1rf 2rf;
+@media screen and (min-width: 992px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
         width: 90vw;
         grid-column-gap: 30px;
     }
-    .record-input{
+
+    .record-input {
         height: 700px;
     }
-    .record-container{
+
+    .record-container {
         display: grid;
-        grid-template-columns: repeat(2,1rf);
-        grid: gap 30px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
     }
 }
-    

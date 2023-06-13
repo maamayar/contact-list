@@ -4,92 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact list </title>
-    <meta name="viewport" content="width-device-wigth,initial-scale=1">
+    <title>Contact list</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Poppins:ital@0;1&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+</head> 
 
+<body>
+    <div class="container">
+    <h1>Agenda de contactos</h1>
+    </div>
     <div class="main-container">
+
         <!-- Registro de entrada -->
         <div class="record-input">
             <h2>Datos del contacto</h2>
             <div class="entry-form">
                 <form>
-                    <label for="name" >Nombre</label>
+                    <label for="name">Nombre</label>
                     <input type="text" id="name">
 
-                    <label for="email" >Correo electrónico</label>
-                    <input type="text" id="address">
+                    <label for="email">Correo electrónico</label>
+                    <input type="text" id="email">
 
-                    <label for="contact-num" >Número telefónico</label>
+                    <label for="contact-num">Número telefónico</label>
                     <input type="text" id="contact-num">
                 </form>
 
                 <!-- Alerta de mensaje -->
-                <span class="message success">Deja un mensaje aquí</span>
+                <span class="message">Mensaje</span>
                 <div class="input-btns">
                     <button type="submit" id="submit-btn">
                         <span>
                             <i class="fas fa-plus"></i>
                         </span> Agregar contacto 
-                         </button>
+                    </button>
 
-                         <button type="button" id="cancel-btn">
-                            <span>
-                                <i class ="fas fa-times"></i>
-                            </span> Cancelar
-                         </button>
+                    <button type="button" id="cancel-btn">
+                        <span>
+                            <i class="fas fa-times"></i>
+                        </span> Cancelar
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!--Mostrar registro -->
+        <!-- Mostrar registros -->
         <div class="record-display">
-            <h2>Contacto disponible:</h2>
+            <h2>Lista de contactos</h2>
 
-        <!--Reiniciar Botón-->
-        <button type ="button" id=" resent-btn">
-            Reiniciar
-        </button>
+            <!-- Reiniciar Botón -->
+            <button type="button" id="reset-btn">
+              Eliminar lista de contactos
+            </button>
 
-        <div class="record-container">
-            <!-- Resgistro unico  -->
-            <div class="record-item">
-                <div class="record-el">
-                    <span id="labelling"> Identificación de contacto:</span>
-                    <span id="contact-id-content">1</span>
-                </div>
-                <div  class="record-el">
-                    <span id="labelling">Nombre:</span>
-                    <span id="contact-id-content">Alejandra Amaya</span>
-                </div>
+            <div class="record-container">
+                <!-- Registro único -->
+                <!--
+                <div class="record-item">
+                    <div class="record-el">
+                        <span class="labelling">Identificación de contacto:</span>
+                        <span class="contact-id-content">1</span>
+                    </div>
+                    <div class="record-el">
+                        <span class="labelling">Nombre:</span>
+                        <span class="contact-id-content">Alejandra Amaya</span>
+                    </div>
 
-                <div  class="record-el">
-                    <span id="labelling"> Correo electrónico:</span>
-                    <span id="contact-id-content">Maamayar@unal.edu.co </span>
-                </div>
+                    <div class="record-el">
+                        <span class="labelling">Correo electrónico:</span>
+                        <span class="contact-id-content">Maamayar@unal.edu.co</span>
+                    </div>
 
-                <div  class="record-el">
-                    <span id="labelling"> Número telefónico:</span>
-                    <span id="contact-id-content">316 758 5850</span>
+                    <div class="record-el">
+                        <span class="labelling">Número telefónico:</span>
+                        <span class="contact-id-content">316 758 5850</span>
+                    </div>
+                    
+                    <button type="button" id="delete-btn">
+                        <span>
+                            <i class="fas fa-trash"></i>
+                        </span> Eliminar
+                    </button>
                 </div>
-                
-                <button type="button" id="delete-btn">
-                    <span>
-                        <i class="fas fa trash"></i>
-                    </span> Eliminar
-                </button>
-                </div>
-
-             </div>
+                -->
+            </div>
         </div>
     </div>
     <!-- Javascript -->
-    <script scr="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
