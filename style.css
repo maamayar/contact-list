@@ -19,6 +19,7 @@ body {
   
   h1 {
     text-align: center;
+    color:#070d17;
   }
 .main-container {
     margin: 0 auto;
@@ -44,19 +45,13 @@ body {
 }
 
 .record-input {
-    color: #000;
-    background: #f0f0f0;
+    color: hwb(0 100% 0%);
+    background:#070d17;
 }
-
-/* .record-display {
-    background: #ee4f9e;
-    color: #fff;
-    position: relative;
-} */
-
 .record-display {
-    background-image: url("https://img.freepik.com/vector-gratis/fondo-ondulado-morado_1035-8665.jpg?w=2000");
+    background-image: url("https://static.vecteezy.com/system/resources/previews/006/690/312/original/abstract-background-with-soft-gradient-color-and-dynamic-shadow-on-background-background-for-wallpaper-eps-10-free-vector.jpg");
     background-size: cover;
+    color:#fafafa;
     background-position: center;
     position: relative;
   }
@@ -68,6 +63,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    /* background-color: rgba(138, 2, 212, 0.171);  */
+    border-radius: 8px;
     z-index: 1;
   }
   
@@ -113,7 +110,7 @@ form input[type="number"] {
 }
 
 form input:focus {
-    background: #252525;
+    background:#400765;
     color: #fff;
 }
 
@@ -131,12 +128,12 @@ form input:focus {
 
 /* Tipo de alerta */
 .error {
-    background: #ff4b42f1;
+    background: #400765;
     visibility: visible;
 }
 
 .success {
-    background: #9415bbf6;
+    background:#6222a2;
     visibility: visible !important;
 }
 
@@ -153,22 +150,20 @@ button {
     font-size: 15px;
     font-weight: 500;
     font-family: inherit;
-    padding: 10px 22px;
+    padding: 10px;
     border: 3px solid #fff;
     border-radius: 25px;
     color: #fff;
-    background: #000;
-    opacity: 1; 
-    cursor: pointer;
-    background-color:#252525;
-    transition: all 0.5s ease;
-    outline: none;
-
-
+    background:#513db0;
+     opacity: 1; 
+     cursor: pointer;
 }
 
-button:active {
+button:hover {
+    cursor: pointer;
     transition: all 0.5s ease;
+    opacity: 1;
+    outline: none;
 }
 
 #submit-btn span,
@@ -177,7 +172,7 @@ button:active {
 }
 
 #reset-btn {
-    position: absolute;
+    position:static;
     right: 25px;
     top: 10px;
     width: 120px;
