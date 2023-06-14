@@ -1,8 +1,8 @@
-## Lista de contactos. ##
+## Lista de contactos 
 
 La aplicación de Lista de Contactos es una herramienta que te permite gestionar tus contactos de forma sencilla. Puedes añadir nuevos contactos, borrar los existentes y visualizar la lista completa de contactos.
 
-## Funcionalidades.
+## Funcionalidades 
 
 1. Añadir un nuevo contacto: Puedes agregar un nuevo contacto a la lista proporcionando su nombre y apellido como una sola cadena de caracteres. La aplicación valida que se ingresen datos válidos antes de agregar el contacto a la lista.
 
