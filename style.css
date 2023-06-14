@@ -46,7 +46,7 @@ body {
 
 .record-input {
     color: hwb(0 100% 0%);
-    background:#070d17;
+    background:#0e0714;
 }
 .record-display {
     background-image: url("https://static.vecteezy.com/system/resources/previews/006/690/312/original/abstract-background-with-soft-gradient-color-and-dynamic-shadow-on-background-background-for-wallpaper-eps-10-free-vector.jpg");
@@ -172,7 +172,7 @@ button:hover {
 }
 
 #reset-btn {
-    position:static;
+    position: static;
     right: 25px;
     top: 10px;
     width: 120px;

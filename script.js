@@ -2,7 +2,6 @@ const addBtn = document.getElementById("submit-btn");
 const cancelBtn = document.getElementById("cancel-btn");
 const resetBtn = document.getElementById("reset-btn");
 const recordContainer = document.querySelector(".record-container");
-const deleteBtn = document.getElementById("delete-btn");
 
 const name = document.getElementById("name");
 const email = document.getElementById("email");
@@ -74,25 +73,31 @@ function addToList(item) {
 }
 
 recordContainer.addEventListener("click", function (event) {
-  if (event.target.id === "delete-btn") {
-    let recordItem = event.target.parentElement;
-    recordContainer.removeChild(recordItem);
-    let tempContactList = ContactArray.filter(function (record) {
-      return (
-        record.id !==
-        parseInt(recordItem.firstElementChild.lastElementChild.textContent)
-      );
-    });
-    ContactArray = tempContactList;
+    if (event.target.id === "delete-btn") {
+      let recordItem = event.target.parentElement;
+      recordItem.remove();
+      let tempContactList = ContactArray.filter(function (record) {
+        return (
+          record.id !==
+          parseInt(
+            recordItem.querySelector("#contact-id-content").textContent
+          )
+        );
+      });
+      ContactArray = tempContactList;
+      localStorage.setItem("contacts", JSON.stringify(ContactArray));
+    }
+  });
+  
+  
+  resetBtn.addEventListener("click", function () {
+    ContactArray = [];
     localStorage.setItem("contacts", JSON.stringify(ContactArray));
-  }
-});
-
-resetBtn.addEventListener("click", function () {
-  ContactArray = [];
-  localStorage.setItem("contacts", JSON.stringify(ContactArray));
-  location.reload();
-});
+    while (recordContainer.firstChild) {
+      recordContainer.removeChild(recordContainer.firstChild);
+    }
+  });
+  
 
 function setMessage(status, message) {
   let messageBox = document.querySelector(".message");
