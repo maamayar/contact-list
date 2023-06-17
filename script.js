@@ -6,15 +6,19 @@ const recordContainer = document.querySelector(".record-container");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
 const number = document.getElementById("contact-num");
+const city = document.getElementById("city");
+const address = document.getElementById("address");
 
 let ContactArray = [];
 let id = 0;
 
-function Contact(id, name, email, number) {
+function Contact(id, name, email, number, city, address) {
   this.id = id;
   this.name = name;
   this.email = email;
   this.number = number;
+  this.city = city;
+  this.address = address;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -41,6 +45,19 @@ function lastID(ContactArray) {
   }
 }
 
+addBtn.addEventListener('click', function(){
+  if(checkInputFields([name, email, number, city, address])){
+      setMessage("success", "Record added successfully!");
+      id++;
+      const contact = new Contact(id, name.value, email.value, number.value, city.value, address.value);
+      ContactArray.push(contact);
+      // Storing contact record in local storage
+      localStorage.setItem('contacts', JSON.stringify(ContactArray));
+      clearInputFields();
+
+  }
+});
+
 function addToList(item) {
   const newRecordDiv = document.createElement("div");
   newRecordDiv.classList.add("record-item");
@@ -61,6 +78,15 @@ function addToList(item) {
       <span id="labelling">Número telefónico:</span>
       <span id="contact-id-content">${item.number}</span>
   </div>
+  <div class="record-el">
+      <span id="labelling">Ciudad:</span>
+      <span id="contact-id-content">${item.city}</span>
+  </div>
+  <div class="record-el">
+      <span id="labelling">Dirección:</span>
+      <span id="contact-id-content">${item.address}</span>
+  </div>
+
   <button type="button" id="delete-btn">
       <span>
           <i class="fas fa-trash"></i>
@@ -71,33 +97,26 @@ function addToList(item) {
 
   recordContainer.appendChild(newRecordDiv);
 }
-
 recordContainer.addEventListener("click", function (event) {
     if (event.target.id === "delete-btn") {
       let recordItem = event.target.parentElement;
-      recordItem.remove();
+      recordContainer.removeChild(recordItem);
       let tempContactList = ContactArray.filter(function (record) {
-        return (
-          record.id !==
-          parseInt(
-            recordItem.querySelector("#contact-id-content").textContent
-          )
-        );
+        return  (record.id !== parseInt(recordItem.firstElementChild.lastElementChild.textContent));
       });
       ContactArray = tempContactList;
       localStorage.setItem("contacts", JSON.stringify(ContactArray));
     }
   });
   
-  
+  // reiniciando todo (la identificación se establecerá en 0)
   resetBtn.addEventListener("click", function () {
     ContactArray = [];
     localStorage.setItem("contacts", JSON.stringify(ContactArray));
-    while (recordContainer.firstChild) {
-      recordContainer.removeChild(recordContainer.firstChild);
-    }
-  });
+    location.reload();
+  })
   
+//Mostrar estados y alertas
 
 function setMessage(status, message) {
   let messageBox = document.querySelector(".message");
@@ -121,6 +140,8 @@ function clearInputFields() {
   name.value = "";
   email.value = "";
   number.value = "";
+  city.value = "";
+  address.value = "";
 }
 
 function removeMessage(status, messageBox) {
@@ -134,6 +155,9 @@ function checkInputFields(inputArr) {
     if (inputArr[i].value === "") {
       return false;
     }
+  }
+  if(!phoneNumCheck(inputArr[2].value)){
+    return false;
   }
   return true;
 }
@@ -154,15 +178,17 @@ function printContacts() {
     console.log("%cNombre: %s", "font-weight: bold;", contact.name);
     console.log("%cCorreo electrónico: %s", "font-weight: bold;", contact.email);
     console.log("%cNúmero telefónico: %s", "font-weight: bold;", contact.number);
+    console.log("%cCiudad: %s", "font-weight: bold;", contact.city);
+    console.log("%cDirección: %s", "font-weight: bold;", contact.address);
     console.log("------------------");
   });
 }
 
 addBtn.addEventListener("click", function () {
-  if (checkInputFields([name, email, number])) {
+  if (checkInputFields([name, email, number, city, address])) {
     setMessage("success", "Registro agregado exitosamente!");
     id++;
-    const contact = new Contact(id, name.value, email.value, number.value);
+    const contact = new Contact(id, name.value, email.value, number.value, city.value, address.value);
     ContactArray.push(contact);
     localStorage.setItem("contacts", JSON.stringify(ContactArray));
     clearInputFields();
