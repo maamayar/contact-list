@@ -169,7 +169,7 @@ button:hover {
 }
 
 #reset-btn {
-    position: absolute;
+    position: center;
     right: 25px;
     top: 10px;
     width: 120px;

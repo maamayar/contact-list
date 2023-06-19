@@ -47,14 +47,17 @@ function lastID(ContactArray) {
 
 addBtn.addEventListener('click', function(){
   if(checkInputFields([name, email, number, city, address])){
-      setMessage("success", "Record added successfully!");
+      setMessage("success", "Registro existoso!");
       id++;
       const contact = new Contact(id, name.value, email.value, number.value, city.value, address.value);
       ContactArray.push(contact);
       // Storing contact record in local storage
       localStorage.setItem('contacts', JSON.stringify(ContactArray));
       clearInputFields();
-
+      addToList(contact);
+    printContacts();
+  } else {
+    setMessage("error", "¡Campos de entrada vacíos o ingreso inválido!");
   }
 });
 
@@ -86,7 +89,7 @@ function addToList(item) {
       <span id="labelling">Dirección:</span>
       <span id="contact-id-content">${item.address}</span>
   </div>
-
+  
   <button type="button" id="delete-btn">
       <span>
           <i class="fas fa-trash"></i>
@@ -97,6 +100,14 @@ function addToList(item) {
 
   recordContainer.appendChild(newRecordDiv);
 }
+
+recordContainer.addEventListener("click", function (event) {
+  if (event.target.classLis.contains("edit-btn")) {
+
+      const contactId = event.target.dataset.contactId;
+    }
+});
+
 recordContainer.addEventListener("click", function (event) {
     if (event.target.id === "delete-btn") {
       let recordItem = event.target.parentElement;
@@ -116,6 +127,11 @@ recordContainer.addEventListener("click", function (event) {
     location.reload();
   })
   
+//Funcion para actualizar contacto 
+updateBtn.addEventListener("click", function () {
+  updateContact();
+});
+
 //Mostrar estados y alertas
 
 function setMessage(status, message) {
