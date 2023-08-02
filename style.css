@@ -1,2 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500&family=Work+Sans:wght@200;400;600;800&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color:#070d17;
+  }
+.main-container {
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.record-input,
+.record-display {
+    border-radius: 10px;
+    padding: 20px 0;
+    margin: 30px 0;
+    box-shadow: 0px 0px 6px 0px rgba(8, 0, 8, 1);
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(8, 0, 8, 1);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(8, 0, 8, 1);
+}
+
+.record-input > h2, .record-display > h2 {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 22px;
+}
+
+.record-input {
+    color: hwb(0 100% 0%);
+    background:#0e0714;
+}
+.record-display {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/006/690/312/original/abstract-background-with-soft-gradient-color-and-dynamic-shadow-on-background-background-for-wallpaper-eps-10-free-vector.jpg");
+    background-size: cover;
+    color:#fafafa;
+    background-position: center;
+    position: relative;
+  }
+/*   
+  .record-display:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: 1;
+  }
+  
+  .record-container {
+    position: relative;
+    z-index: 2;
+  } */
+  
+
+/* Registro de entrada */
+.entry-form {
+    padding: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+form label,
+form input {
+    display: block;
+    outline: none;
+    border-radius: 25px;
+    border: none;
+}
+
+form input[type="text"], form input[type="number"] {
+    color: #000;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px 18px;
+    margin: 12px 0;
+    transition: all 0.5s ease;
+}
+
+form input:focus {
+    background:#400765;
+    color: #fff;
+}
+
+.message {
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 0;
+    visibility: hidden;
+}
+
+/* Tipo de alerta */
+.error {
+    background: #400765;
+    visibility: visible;
+}
+
+.success {
+    background:#6222a2;
+    visibility: visible !important;
+}
+
+/*------------------------------------*/
+.input-btns {
+    text-align: center;
+}
+
+/* Funcionalidad BOTON STYLE */
+button {
+    display: block;
+    width: 160px;
+    margin: 20px auto;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    padding: 10px;
+    border: 3px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    background:#513db0;
+    opacity: 1; 
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+    transition: all 0.5s ease;
+    opacity: 1;
+    outline: none;
+}
+
+#submit-btn span,
+#cancel-btn span {
+    padding-right: 5px;
+}
+
+#reset-btn {
+    position: center;
+    right: 25px;
+    top: 10px;
+    width: 120px;
+}
+
+/* ------------------------------------- */
+.record-display {
+    padding: 30px 40px;
+}
+
+.record-el {
+    display: block;
+    padding: 4px 0;
+    text-align: center;
+    opacity: 0.9;
+}
+
+#labelling {
+    font-weight: 800;
+}
+
+.record-item {
+    color: #000;
+    border-radius: 10px;
+    padding: 10px 25px;
+    margin: 15px 0;
+    background: #fff;
+    box-shadow: 0 0 6px #777;
+}
+
+#delete-btn span {
+    padding-right: 5px;
+}
+
+/* -----------Medios de consulta-------------- */
+@media screen and (min-width: 992px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        width: 90vw;
+        grid-column-gap: 30px;
+    }
+
+    .record-input {
+        height: 800px;
+    }
+
+    .record-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+}

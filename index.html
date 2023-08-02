@@ -4,33 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact list </title>
-    <meta name="viewport" content="width-device-wigth,initial-scale=1">
-    <link rel="stulesheet" href="style.css">
+    <title>Contact list</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+</head> 
 
+<body>
+    <div class="container">
+    <h1>Agenda de contactos</h1>
+    </div>
     <div class="main-container">
+
         <!-- Registro de entrada -->
         <div class="record-input">
             <h2>Datos del contacto</h2>
             <div class="entry-form">
                 <form>
-                    <label for="name" >Nombre</label>
+                    <label for="name">Nombre</label>
                     <input type="text" id="name">
 
-                    <label for="address" >Dirección</label>
-                    <input type="text" id="address">
+                    <label for="email">Correo electrónico</label>
+                    <input type="text" id="email">
 
-                    <label for="contact-num" >Número telefónico</label>
+                    <label for="contact-num">Número telefónico</label>
                     <input type="text" id="contact-num">
 
-                    
+                    <label for="city">Ciudad</label>
+                    <input type="text" id="city">
+
+                    <label for="address">Dirección</label>
+                    <input type="text" id="address">
+
                 </form>
+
+                <!-- Alerta de mensaje -->
+                <span class="message">Mensaje</span>
+                <div class="input-btns">
+                    <button type="submit" id="submit-btn">
+                        <span>
+                            <i class="fas fa-plus"></i>
+                        </span> Agregar  
+                    </button>
+
+                    <button type="button" id="cancel-btn">
+                        <span>
+                            <i class="fas fa-times"></i>
+                        </span> Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mostrar registros -->
+        <div class="record-display">
+            <h2>Lista de contactos</h2>
+
+            <!-- Reiniciar Botón -->
+            <button type="button" id="reset-btn">
+                <i class="fas fa-trash"></i>
+              Borrar
+            </button>
+
+            <div class="record-container">
+                <!-- Registro único -->
+                <!--
+                <div class="record-item">
+                    <div class="record-el">
+                        <span class="labelling">Identificación de contacto:</span>
+                        <span class="contact-id-content">1</span>
+                    </div>
+                    <div class="record-el">
+                        <span class="labelling">Nombre:</span>
+                        <span class="contact-id-content">Alejandra Amaya</span>
+                    </div>
+
+                    <div class="record-el">
+                        <span class="labelling">Correo electrónico:</span>
+                        <span class="contact-id-content">Maamayar@unal.edu.co</span>
+                    </div>
+
+                    <div class="record-el">
+                        <span class="labelling">Número telefónico:</span>
+                        <span class="contact-id-content">316 758 5850</span>
+                    </div>
+
+
+
+                    <button type="button" id="delete-btn">
+                        <span>
+                            <i class="fas fa-trash"></i>
+                        </span> Eliminar
+                    </button>
+                </div>
+                -->
+
             </div>
         </div>
     </div>
-    
+    <!-- Javascript -->
+    <script src="script.js"></script>
 </body>
 </html>
