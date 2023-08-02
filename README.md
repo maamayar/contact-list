@@ -1,6 +1,6 @@
 # Agenda de Contactos
 
-Este es un proyecto simple de "Agenda de Contactos" desarrollado utilizando HTML, CSS y JavaScript. La aplicación proporciona una interfaz de usuario para registrar, mostrar y eliminar contactos en una lista. A continuación, se describen las funcionalidades, beneficios, tecnologías utilizadas y posibles usos de la aplicación.
+Este es un proyecto  de "Agenda de Contactos" desarrollado utilizando HTML, CSS y JavaScript. La aplicación proporciona una interfaz de usuario para registrar, mostrar y eliminar contactos en una lista. A continuación, se describen las funcionalidades, beneficios, tecnologías utilizadas y posibles usos de la aplicación.
 
 ## Funcionalidades
 
